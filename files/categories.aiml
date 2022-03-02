@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern># Produktsuche ^</pattern>
+    <template><think><set name="topic">productsearchfilter</set>
+    <set name="price1">1</set>
+    <set name="price2">99999</set>
+    <set name="color">none</set>
+    <set name="filtercolor">none</set>
+    <set name="fassung2">none</set>
+    </think>Okay, welche Abteilung?
+    <reply>Wohnen</reply>
+    <reply>Schlafen</reply>
+    <reply>Küchen</reply>
+    <reply>Speisen</reply>
+    <reply>Bad</reply>
+    <reply>Garten</reply>
+    <reply>Teppiche</reply>
+    <reply>Deko und Textil</reply>
+    <reply>Flur und Büro</reply>
+    <reply>Leuchten</reply>
+    </template>
+</category>
+<category>
+    <pattern># Artikelsuche ^</pattern>
+    <template><srai></srai></template>
+</category>
+<topic name="productsearchfilter">
+<category>
+    <pattern>Wohnen</pattern>
+    <template><think><set name="topic">Wohnen</set></think>Okay, und weiter?
+    <reply>Polstergarnituren</reply>
+    <reply>Couch und Beistelltische</reply>
+    <reply>Wohnzimmermöbel</reply>
+    <reply>Wohnzimmerbeleuchtung</reply>
+    <reply>Wohnaccessoires</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>Schlafen</pattern>
+    <template><think><set name="topic">Schlafen</set></think>Okay, und weiter?
+    <reply>Betten</reply>
+    <reply>Matratzen und Lattenrahmen</reply>
+    <reply>Kleiderschränke</reply>
+    <reply>Schlafzimmermöbel</reply>
+    <reply>Schlafzimmerleuchten</reply>
+    <reply>Bettwäsche</reply><reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>Küchen</pattern>
+    <template>Okay, und weiter?
+    <button>
+        <text>Küchenzeilen</text>
+        <postback></postback>
+    </button><button>
+        <text>L Küchen</text>
+        <postback></postback>
+    </button><button>
+        <text>Inselküchen</text>
+        <postback></postback>
+    </button><button>
+        <text>Landhausküchen</text>
+        <postback></postback>
+    </button><button>
+        <text>Moderne Küchen</text>
+        <postback></postback>
+    </button><button>
+        <text>Wohnküchen</text>
+        <postback></postback>
+    </button><button>
+        <text>Basisküchen</text>
+        <postback></postback>
+    </button>
+    <button>
+        <text>Küchenberatungstermin</text>
+        <url>https://www.opti-wohnwelt.de/beratungstermin.html</url>
+    </button>
+    
+    <button>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </button></template>
+</category>
+<!-- Speisen-->
+<category>
+    <pattern>Speisen</pattern>
+    <template><think><set name="topic">Speisen</set></think>Okay, und weiter?
+    <reply>Essgruppen</reply>
+    <reply>Esszimmermöbel</reply>
+    <reply>Esszimmerbeleuchtung</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+
+
+<!--Bad-->
+
+<category>
+    <pattern>Bad</pattern>
+    <template><think><set name="topic">Bad</set></think>Okay, und weiter?
+    <reply>Badmöbel</reply>
+    <reply>Badaccessoires</reply>
+    <reply>Badtextilien</reply>
+    <reply>Badbeleuchtung</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+<!--Garten-->
+
+<category>
+    <pattern>Garten</pattern>
+    <template><think><set name="topic">Garten</set></think>Okay, und weiter?
+    <reply>Gartenmöbel</reply>
+    <reply>Sonnenschutz</reply>
+    <reply>Outdoor Textilien</reply>
+    <reply>Gartenbeleuchtung</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>Teppiche</pattern>
+    <template><think><set name="topic">Teppiche</set></think>Okay, möchten Sie noch Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+
+<!-- Deko & Textil -->
+<category>
+    <pattern>Deko und Textil</pattern>
+    <template><think><set name="topic">Deko</set></think>Okay, und weiter?
+    <reply>Dekoration</reply>
+    <reply>Heimtextilien</reply>
+    <reply>Bettwaren</reply>
+    <reply>Wanddekoration</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+<!-- Flur und Büro -->
+<category>
+    <pattern>Flur und Büro</pattern>
+    <template><think><set name="topic">Flur</set></think>Okay, und weiter?
+    <reply>Flurmöbel</reply>
+    <reply>Büromöbel</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+<!-- Leuchten -->
+<category>
+    <pattern>Leuchten</pattern>
+    <template><think><set name="topic">Leuchten</set></think>Okay, und weiter?
+    <reply>Innenleuchten</reply>
+    <reply>Außenleuchten</reply>
+    <reply>Leuchtentrends</reply>
+    <reply>
+        <text>Zurück</text>
+        <postback>Produktsuche</postback>
+    </reply>
+    </template>
+</category>
+
+
+
+
+
+
+
+</topic>
+</aiml>

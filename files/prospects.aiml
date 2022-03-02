@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+	
+	<category>
+	        <pattern># Werbung ^</pattern>
+	        <template>
+	            <button>
+	                <text>Aktuelle Aktionen</text>
+	                <postback></postback>
+                </button>
+                <button>
+                    <text>Prospekt</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Zurück</text>
+                    <postback>hallo</postback>
+                </button>
+	        </template>
+        </category>
+        
+        <category>
+            <pattern>Aktuelle Aktionen</pattern>
+            <template>
+                    Unsere aktuellen Aktionen sehen Sie ganz oben auf unserer Startseite.
+                    Hier gibt es trotzdem noch einmal einen Überblick über die aktuellen Aktionen.
+                    <button>
+                        <text>Zu den Aktionen</text>
+                        <url>https://www.opti-wohnwelt.de/aktuelle_aktionen.html</url>
+                    </button>
+                    <button>
+                        <text>Zurück</text>
+                        <postback>Werbung</postback>
+                    </button>
+            </template>
+        </category>
+	<category>
+	    
+        <pattern># Prospekt ^</pattern>
+        <template>
+            <card>
+                <image>https://backend.opti-wohnwelt.de/pub/media/prospekte/0122_katalog_homework_online/cover.jpg</image>
+                    <title>Opti-Wohnwelt Prospekte</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Hier gehts zu unseren Prospekten</text>
+                        <url>https://www.opti-wohnwelt.de/prospekte.html</url>
+                    </button>
+                    <button>
+                        <text>Zurück</text>
+                        <postback>Werbung</postback>
+                </button>
+            </card>
+                
+              
+            
+        </template>
+    </category>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</aiml>

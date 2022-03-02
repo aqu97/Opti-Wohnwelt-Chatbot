@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+    <pattern>Küchenzeilen</pattern>
+    <template><think><set name="topic">Küchenzeilen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Küchenzeilen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/kuechenzeilen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/kuechenzeilen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/kuechenzeilen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- L-Küchen-->
+<category>
+    <pattern>L Küchen</pattern>
+    <template><think><set name="topic">L Küchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="L Küchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/l-kuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/l-kuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/l-kuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- Inselküchen-->
+<category>
+    <pattern>Inselküchen</pattern>
+    <template><think><set name="topic">Inselküchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Inselküchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/inselkuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/inselkuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/inselkuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- Landhausküchen-->
+<category>
+    <pattern>Landhausküchen</pattern>
+    <template><think><set name="topic">Landhausküchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Inselküchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/landhauskuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/landhauskuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/landhauskuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- Moderne Küchen-->
+<category>
+    <pattern>Moderne Küchen</pattern>
+    <template><think><set name="topic">Moderne Küchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Moderne Küchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/moderne-kuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/moderne-kuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/moderne-kuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- Wohnküchen-->
+<category>
+    <pattern>Wohnküchen</pattern>
+    <template><think><set name="topic">Wohnküchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Inselküchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/wohnkuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/wohnkuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/wohnkuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+<!-- Basisküchen-->
+<category>
+    <pattern>Basisküchen</pattern>
+    <template><think><set name="topic">Basisküchen</set></think>
+        Okay! Wollen Sie noch Filter setzen?
+        <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<topic name="Basisküchen">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/kuechen/kuechen/basiskuechen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "1000 bis 5000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/basiskuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/kuechen/kuechen/basiskuechen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+    </template>
+</category></topic>
+</aiml>

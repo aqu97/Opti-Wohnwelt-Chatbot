@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern># OptiCard ^</pattern>
+	   <template><think><set name="topic">Opticard</set> </think>
+	    Zu was haben Sie eine Frage?
+	    <button>
+	        <text>Aktivierung</text>
+	        <postback></postback>
+        </button>
+	    <button>
+	        <text>Anmeldung</text>
+	        <postback></postback>
+        </button>
+        <button>
+            <text>Allgemeines</text>
+            <postback></postback>
+        </button><button>
+            <text>5€ Gutschein</text>
+            <postback></postback>
+        </button><button>
+            <text>Zurück</text>
+            <postback>Hallo</postback>
+        </button>
+	   </template> 
+</category>
+
+<topic name="Opticard">
+<category>
+    <pattern>Aktivierung</pattern>
+    <template>Okay, welches Problem haben Sie?
+    <button>
+        <text>Ich habe die Karte in der Filiale erhalten</text>
+        <postback></postback>
+    </button><button>
+        <text>Ich habe die Karte online beantragt</text>
+        <postback></postback>
+    </button><button>
+        <text>Alte OptiCard online nutzen</text>
+        <postback></postback>
+    </button>
+    <button>
+        <text>Zurück</text>
+        <postback>Opticard</postback>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Beantragung</pattern>
+    <template>
+    <button>
+        <text>Online beantragen</text>
+        <postback></postback>
+    </button>
+    <button>
+        <text>im Geschäft</text>
+        <postback></postback>
+    </button>
+    <button>
+        <text>Zurück</text>
+        <postback>Opticard</postback>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Verlust melden</pattern>
+    <template>Kein Problem, einfach das Formular ausfüllen und es wird Ihnen eine neue Karte zugeschickt.
+    <button>
+        <text>Zum Formular</text>
+        <url>https://www.opti-wohnwelt.de/opticard.html</url>
+    </button>
+    <button>
+        <text>Zurück</text>
+        <postback>Allgemeines</postback>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Alte OptiCard online nutzen</pattern>
+    <template>Um Ihre alte OptiCard online nutzen zu können, aktivieren Sie bitte unter folgendem Link ihre alte OptiCard.
+    Sollte es hier Probleme geben, rufen Sie bitte bei uns im Service-Center
+        unter der 0800 / 2008 222 an. </template>
+</category>
+<category>
+    <pattern>Allgemeines</pattern>
+    <template>
+        <button>
+            <text>Beantragung</text>
+            <postback></postback>
+        </button>
+        <button>
+            <text>Verlust melden</text>
+            <postback></postback>
+        </button>
+        <button>
+            <text>Nutzerdaten ändern</text>
+            <postback></postback>
+        </button>
+        <button>
+            <text>Vorteile</text>
+            <postback></postback></button>
+            <button>
+            <text>Zurück</text>
+            <postback>Opticard</postback></button>
+        </template>
+</category>
+<category>
+    <pattern>Nutzerdaten ändern</pattern>
+    <template>Loggen Sie sich ein, und klicken Sie auf "Mein Opti", oben rechts.
+    <split></split>Hier können Sie unter Benutzerkonto Übersicht und Adressbuch
+    Ihre Nutzerdaten ändern.</template>
+</category>
+<category>
+    <pattern>Vorteile</pattern>
+    <template>Mit unserer OptiCard erhalten Sie folgende Vorteile:
+        <ul>
+            <li>2 Stunden Miettransporter gratis</li>
+            <li>0%-Finanzierung auf Ihren Möbelkauf</li>
+            <li>3% Rabatt auf Einkäufe in den Abteilungen Boutique, Heimtex, Leuchten und Teppiche</li>
+            <li>Persönliche Geburtstagsüberraschung</li>
+            <li>Wechselnde Monatsangebote</li>
+        </ul>
+    </template>
+</category>
+<category>
+    <pattern>Online beantragen</pattern>
+    <template>Hier beantragen und von vielen Vorteilen profitieren
+     <split></split><link>
+          <text>Zur Beantragung</text>
+          <url>https://www.opti-wohnwelt.de/opticard.html</url>
+      </link>
+    </template>
+</category>
+<category>
+    <pattern>Im Geschäft</pattern>
+    <template>Fragen Sie bei Ihrem Verkäufer nach der Opticard. Er wird Ihnen weiterhelfen.
+    </template>
+</category>
+<category>
+    <pattern>Ich habe die Karte in der Filiale erhalten </pattern>
+    <template>
+        <button>
+            <text>Ich habe eine Mailadresse mit angegeben</text>
+            <postback></postback>
+        </button>
+        <button>
+            <text>Ich habe noch keine Mailadresse verknüpft</text>
+            <postback></postback>
+        </button>
+        
+    <button>
+        <text>Zurück</text>
+        <postback>Aktivierung</postback>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Ich habe eine Mailadresse mit angegeben</pattern>
+    <template>Oft kommt der Verkäufer nicht immer direkt dazu Ihr Konto anzulegen. <split></split>Sollte das Beantragen der OptiCard jedoch 
+    mehr als zwei Wochen her sein, dann melden Sie sich bitte bei uns im Service-Center unter der 0800 / 2008 222. <split></split>
+    Falls der Verkäufer Sie schon angelegt hat, haben Sie eine E-Mail erhalten. In der E-Mail können Sie ein Passwort vergeben und 
+    damit die Registration abschließen 
+    <button>
+        <text>Ich habe keine Mail erhalten</text>
+        <postback></postback>
+    </button></template>
+</category>
+
+<category>
+    <pattern>Ich habe noch keine Mailadresse verknüpft</pattern>
+    <template>Sofern Sie noch kein Konto mit ihrer OptiCard verknüpft haben, können Sie über folgenden Link unter Aktivierung Ihrer OptiCard
+    ein E-Mail-Konto hinzufügen. Danach erhalten Sie eine E-Mail, in der Sie Ihre Registrierung abschließen können. 
+    Danach können Sie Ihre OptiCard auch online nutzen.
+   <link>
+       <text>https://www.opti-wohnwelt.de/login.html</text>
+       <url>https://www.opti-wohnwelt.de/login.html</url>
+   </link>
+    <button>
+        <text>Ich habe keine Mail erhalten</text>
+        <postback></postback>
+    </button>
+    <button>
+        <text>Aktivierung nicht möglich</text>
+        <postback></postback>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Ich habe die Karte online beantragt</pattern>
+    <template>
+        Falls Sie Karte online beantragt haben, erhalten Sie nach der Registrierung eine E-Mail in der Sie den Registrierungsprozess
+        abschließen können. Sie müssen die Karte nicht noch extra aktivieren. Sie können sich schon anmelden.
+        <button>
+            <text>Ich habe keine Mail erhalten</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+<category>
+    <pattern>Ich habe keine Mail erhalten</pattern>
+    <template>Bitte sehen Sie in ihrem Spam-Postfach nach.
+    <split></split>
+        Sollten Sie immernoch keine E-Mail sehen, melden Sie sich bitte bei uns im Service-Center
+        unter 0800 / 2008 222, wir senden Ihnen die E-Mail dann erneut zu.
+        
+    </template>
+</category>
+<category>
+    <pattern>Aktivierung nicht möglich</pattern>
+    <template>Möglicherweise gibt es bereits ein Konto mit der gewünschten E-Mail-Adresse, bitte rufen Sie in diesem Fall bei uns im
+    Service-Center unter der 0800 / 2008 222 an. </template>
+</category>
+<category>
+    <pattern>Kundenkarte bereits aktiviert</pattern>
+    <template>Falls Sie eine E-Mail von uns erhalten haben, in der ein Link zur Bestätigung war,
+    Sie diesen angeklickt haben und sich angemeldet haben, dann ist Ihr Konto, sowie Ihre Opticard
+    bereits bestätigt. Sie können sich beim Login damit einloggen und müssen die Karte nicht erneut aktivieren.</template>
+</category>
+<category>
+    <pattern>Ich habe keine Email erhalten</pattern>
+    <template>Es gibt mehrere Gründe warum bei Ihnen keine E-Mail angekommen ist
+    
+    <ul>
+        <li>E-Mail ist im Spam-Ordner gelandet</li>
+        <li>Manchmal kann es bis zu zwei Wochen dauern bis der Verkäufer ihre Opticard einträgt.
+        Sollte die Beantragung über zwei Wochen her sein, bitte melden Sie sich bei uns im Service-Center
+        unter 0800 / 2008 222</li>
+        <li>Ihre OptiCard ist noch nicht mit einem Online-Konto verknüpft. 
+        
+        <link>
+            <text> Verknüpfen Sie Hier!</text>
+            <url>https://www.opti-wohnwelt.de/opticard.html</url>
+        </link>
+        </li>
+    </ul>
+    </template>
+</category>
+<category>
+    <pattern>5€ Gutschein</pattern>
+    <template>
+        Der Gutscheincode funktioniert nur, wenn Sie eine E-Mail-Adresse angegeben haben, dieser wird mit der Bestätigungsemail verschickt. 
+         Sollten Sie, nach Registrierung, diese E-Mail nicht finden, schauen Sie bitte in Ihrem Spam-Postfach nach. <split></split>
+         Ansonsten erreichen Sie uns unter 0800 / 2008 222.
+    
+    </template>
+</category>
+<category>
+    <pattern>Ich finde die Email nicht mehr</pattern>
+    <template>Bitte melden Sie sich 
+            bitte bei uns im Service-Center unter 0800 / 2008 222.   </template>
+</category>
+<category>
+    <pattern>Login funktioniert nicht
+</pattern>
+    <template>
+        <ul>
+            <li>Versuchen Sie "Passwort vergessen"</li>
+            <li>Sie haben eventuell die falsche E-Mail-Adresse angegeben. Dann melden Sie sich 
+            bitte bei uns im Service-Center unter 0800 / 2008 222 </li>
+            <li></li>
+        </ul>
+    </template>
+</category>
+<category>
+    <pattern>Anmeldung</pattern>
+    <template>
+        <button>
+            <text>Anmeldung funktioniert nicht</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+<category>
+    <pattern>Anmeldung funktioniert nicht</pattern>
+    <template>
+        Falls Sie sich nicht anmelden können, kann das mehrere Gründe haben.
+        <button>
+            <text>Registration nicht vollständig abgeschlossen</text>
+            <postback></postback>
+        </button><button>
+            <text>Falsches Passwort</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+
+
+
+<category>
+    <pattern>Registration nicht vollständig abgeschlossen</pattern>
+    <template>Nach der Registration erhalten Sie eine E-Mail, in der Sie noch die Anmeldung abschließen müssen.
+    Sollten Sie das nicht gemacht haben, dann können Sie sich nicht anmelden.
+    
+    <ul>
+        <li>Schauen Sie in Ihrem Spam-Ordner nach</li>
+        <li>Melden Sie sich 
+            bitte bei uns im Service-Center unter 0800 / 2008 222</li>
+        <li></li>
+    </ul>
+    </template>
+</category>
+<category>
+    <pattern>Falsches Passwort</pattern>
+    <template>Bitte vergeben Sie sich unter "Passwort vergessen" ein neues Passwort.</template>
+</category>
+
+</topic></aiml>

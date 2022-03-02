@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>Gartenmöbel</pattern>
+    <template>Okay, und weiter?
+    <reply>Gartenstühle</reply>
+    <reply>Gartentische</reply>
+    <reply>Loungemöbel</reply>
+    <reply>Gartenliegen</reply>
+    <reply><text>Zurück</text>
+        <postback>Garten</postback></reply>
+    </template>
+</category>
+<category>
+    <pattern>Sonnenschutz</pattern>
+    <template>Okay, und weiter?
+    <reply>Sonnenschirme</reply>
+    <reply>Schirmständer</reply>
+    <reply><text>Zurück</text>
+        <postback>Garten</postback></reply>
+    </template>
+</category>
+<category>
+    <pattern>Outdoor Textilien</pattern>
+    <template>Okay, und weiter?
+    <reply>Kissen</reply>
+    <reply>Auflagen für Niederlehner</reply>
+    <reply>Auflagen für Hochlehner</reply>
+    <reply>Auflagen für Liegen</reply>
+    <reply><text>Zurück</text>
+        <postback>Garten</postback></reply>
+    </template>
+</category>
+<category>
+    <pattern>Gartenbeleuchtung</pattern>
+    <template>Okay, und weiter?
+    <reply>Wegeleuchten</reply>
+    <reply>Solarleuchten</reply>
+    <reply><text>Zurück</text>
+        <postback>Garten</postback></reply>
+    </template>
+</category>
+
+<category>
+    <pattern>Gartenstühle</pattern>
+    <template><think><set name="topic">Gartenstühle</set></think>Okay, möchten Sie noch  Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<category>
+    <pattern>Gartentische</pattern>
+    <template><think><set name="topic">Gartentische</set></think>Okay, möchten Sie noch  Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category>
+<category>
+    <pattern>Loungemöbel</pattern>
+    <template><think><set name="topic">Loungemöbel</set></think>Okay, möchten Sie noch  Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category><category>
+    <pattern>Gartenliegen</pattern>
+    <template><think><set name="topic">Gartenliegen</set></think>Okay, möchten Sie noch  Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category><category>
+    <pattern>Sonnenschirme</pattern>
+    <template><think><set name="topic">Sonnenschirme</set></think>Okay, möchten Sie noch  Filter setzen?
+    <reply>Ja</reply><reply>Nein</reply>
+    </template>
+</category><category>
+    <pattern>Schirmständer</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/sonnenschutz/schirmstaender.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Kissen</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/outdoor-textilien/kissen.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Auflagen für Niederlehner</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/outdoor-textilien/auflagen-fuer-niederlehner.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Auflagen für Hochlehner</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/outdoor-textilien/auflagen-fuer-hochlehner.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Auflagen für Liegen</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/outdoor-textilien/auflagen-fuer-liegen.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Wegeleuchten</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenbeleuchtung/wegeleuchten.html</url>
+        </link>
+    </template>
+</category><category>
+    <pattern>Solarleuchten</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu Ihren Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenbeleuchtung/solarleuchten.html</url>
+        </link>
+    </template>
+</category>
+<!-- Gartenstühle -->
+<topic name="Gartenstühle">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Gelb</reply><reply>Grau</reply><reply>Grün</reply><reply>Holz</reply><reply>Rosa</reply><reply>Schwarz</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grün</pattern>
+    <template><think><set name="color">Grün</set><set name="filtercolor">filtercolor=Grün</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Gelb</pattern>
+    <template><think><set name="color">Gelb</set><set name="filtercolor">filtercolor=Gelb</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Rosa</pattern>
+    <template><think><set name="color">Rosa</set><set name="filtercolor">filtercolor=Rosa</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<!-- Gartenstühle -->
+<topic name="Gartenstühle">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Gelb</reply><reply>Grau</reply><reply>Grün</reply><reply>Holz</reply><reply>Rosa</reply><reply>Schwarz</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grün</pattern>
+    <template><think><set name="color">Grün</set><set name="filtercolor">filtercolor=Grün</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Gelb</pattern>
+    <template><think><set name="color">Gelb</set><set name="filtercolor">filtercolor=Gelb</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Rosa</pattern>
+    <template><think><set name="color">Rosa</set><set name="filtercolor">filtercolor=Rosa</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+<!-- Gartentische -->
+<topic name="Gartentische">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartentische.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartentische.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartentische.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Anthrazit</reply><reply>Grau</reply><reply>Holz</reply><reply>Schwarz</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+<!-- Loungemöbel -->
+<topic name="Loungemöbel">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/loungemoebel.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/loungemoebel.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/loungemoebel.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Anthrazit</reply><reply>Grau</reply><reply>Schwarz</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+<!-- gartenliegen -->
+<topic name="Gartenliegen">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenliegen.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenliegen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/gartenmoebel/gartenliegen.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Anthrazit</reply><reply>Grau</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+<!-- Sonnenschirme -->
+<topic name="Sonnenschirme">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/garten/sonennschutz/sonnenschirme.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "800 bis 2000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category><category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/sonennschutz/sonnenschirme.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/garten/sonennschutz/sonnenschirme.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li></condition>
+</template>
+</category><category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Anthrazit</reply><reply>Beige</reply><reply>Creme</reply><reply>Grau</reply><reply>Grün</reply>
+        <reply>Rot</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Creme</pattern>
+    <template><think><set name="color">Creme</set><set name="filtercolor">filtercolor=Creme</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Rot</pattern>
+    <template><think><set name="color">Rot</set><set name="filtercolor">filtercolor=Rot</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Beige</pattern>
+    <template><think><set name="color">Beige</set><set name="filtercolor">filtercolor=Beige</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grün</pattern>
+    <template><think><set name="color">Grün</set><set name="filtercolor">filtercolor=Grün</set></think>Okay, möchten Sie noch  andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+
+</topic></aiml>

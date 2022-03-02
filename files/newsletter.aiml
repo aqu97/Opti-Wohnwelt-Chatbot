@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+  <pattern># Newsletter ^</pattern>
+  <template>Unser Newsletter geht mit unserer OptiCard einher. Sie können sie kostenlos
+  beantragen und neben dem Newsletter von anderen Vorteilen profitieren.
+  <delay>2</delay>
+
+  Mehr Infos zur ihrer OptiCard finden Sie hier.
+        <reply>
+              <text>Zur OptiCard</text>
+              <postback>Opticard</postback>
+        </reply>
+        <reply>
+            <text>Zurück</text>
+            <postback>hallo</postback>
+        </reply>
+        
+    </template>
+ </category>
+
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
+</aiml>

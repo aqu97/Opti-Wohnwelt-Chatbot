@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern>Corona</pattern>
+	    <template><set name = "topic">Corona</set> <reply>
+	        <text>Aktuelle Verordnungen</text>
+	        <postback>Verordnungen</postback>
+        </reply>
+        <reply>
+            <text>Zurück</text>
+            <postback>Hallo</postback>
+        </reply>
+	    </template>
+    </category>
+
+<topic name = "Corona">
+    <category>
+        <pattern>Verordnungen</pattern>
+        <template>
+            <button>
+                <text>Baden Württemberg</text>
+                <postback></postback>
+            </button><button>
+                <text>Bayern</text>
+                <postback></postback>
+            </button><button>
+                <text>Brandenburg</text>
+                <postback></postback>
+            </button><button>
+                <text>Bremen</text>
+                <postback></postback>
+            </button><button>
+                <text>Hessen</text>
+                <postback></postback>
+            </button><button>
+                <text>Mecklenburg Vorpommern</text>
+                <postback></postback>
+            </button><button>
+                <text>Niedersachsen</text>
+                <postback></postback>
+            </button><button>
+                <text>Nordrhein Westfalen</text>
+                <postback></postback>
+            </button><button>
+                <text>Rheinland Pfalz</text>
+                <postback></postback>
+            </button><button>
+                <text>Saarland</text>
+                <postback></postback>
+            </button><button>
+                <text>Schleswig Holstein</text>
+                <postback></postback>
+            </button><button>
+                <text>Thüringen</text>
+                <postback></postback>
+            </button><button>
+                <text>Zurück</text>
+                <postback>Corona</postback>
+            </button></template>
+    </category>
+    
+    
+    <category>
+        <pattern>Aktuelle Verordnungen</pattern>
+        <template></template>
+    </category>
+    <category>
+    <pattern>Niedersachsen</pattern>
+    <template>
+        Aktuell gelten im gesamten Handel in Niedersachsen keine Einlassbeschränkungen.
+        <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.niedersachsen.de/Coronavirus/aktuelle_lage_in_niedersachsen/niedersachsen-und-corona-aktuelle-leitindikatoren-203487.html</url>
+        </link>
+       <reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Baden Württemberg</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Baden Württemberg die 2G Regelung.
+        <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.baden-wuerttemberg.de/de/service/aktuelle-infos-zu-corona/aktuelle-corona-verordnung-des-landes-baden-wuerttemberg/</url>
+        </link>
+       <reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Bayern</pattern>
+    <template>
+        Aktuelle gelten im gesamten Handel in Bayern keine Einlassbeschränkungen.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://corona-ampel-bayern.de/</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Brandenburg</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Brandenburg die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.brandenburg.de/cms/detail.php/bb1.c.727066.de</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Hessen</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Hessen die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.hessen.de/Handeln/Corona-in-Hessen</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Rheinland Pfalz</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Rheinland Pfalz die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://corona.rlp.de/de/aktuelles/corona-regeln-im-ueberblick/</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Mecklenburg Vorpommern</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Mecklenburg die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.regierung-mv.de/corona/</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Schleswig Holstein</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Schleswig Holstein die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/FAQ/Dossier/gastronomieEinzelhandel.html</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Saarland</pattern>
+    <template>
+        Aktuelle gelten im gesamten Handel in Saarland keine Einlassbeschränkungen.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.saarland.de/DE/portale/corona/service/rechtsverordnung-massnahmen/rechtsverordnung-massnahmen_node.html</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Thüringen</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Thüringen die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://corona.thueringen.de/</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Bremen</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Bremen die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.bremen.de/corona</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category><category>
+    <pattern>Nordrhein Westfalen</pattern>
+    <template>
+        Aktuell gilt im gesamten Handel in Nordrrhein Westfalen die 2G Regelung.
+       <link>
+            <text>Zur Verordnung</text>
+            <url>https://www.land.nrw/corona</url>
+        </link><reply>
+           <text>Zurück</text>
+           <postback>Verordnungen</postback>
+       </reply>
+    </template>
+</category>
+    </topic>
+    
+    
+ 
+    
+    
+    
+</aiml>

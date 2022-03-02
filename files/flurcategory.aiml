@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <topic name ="Flur">
+        <category>
+           <pattern>Flurmöbel</pattern>
+           <template>Okay, und weiter?
+           <reply>Garderoben</reply>
+           <reply>Schuhschränke</reply>
+           <reply><text>Zurück</text>
+           <postback>Flur und Büro</postback></reply>
+           </template>
+        </category> 
+        <category>
+           <pattern>Büromöbel</pattern>
+           <template>Okay, und weiter?
+           <reply>Schreibtische</reply>
+           <reply>Schreibtischstühle</reply>
+           <reply>Büroregale</reply>
+           <reply>Schreibtischleuchten</reply>
+           <reply><text>Zurück</text>
+           <postback>Flur und Büro</postback></reply>
+           </template>
+        </category> 
+        <category>
+            <pattern>Garderoben</pattern>
+            <template><think><set name="topic">Garderoben</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category>
+        <category>
+            <pattern>Schuhschränke</pattern>
+            <template><think><set name="topic">Schuhschränke</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category><category>
+            <pattern>Schreibtische</pattern>
+            <template><think><set name="topic">Schreibtische</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category>
+        <category>
+            <pattern>Schreibtischstühle</pattern>
+            <template><think><set name="topic">Schreibtischstühle</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category>
+        <category>
+            <pattern>Büroregale</pattern>
+            <template><think><set name="topic">Büroregale</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category>
+        <category>
+            <pattern>Schreibtischleuchten</pattern>
+            <template><think><set name="topic">Schreibtischleuchten</set></think>Okay, möchten Sie noch Filter setzen?
+            <reply>Ja</reply><reply>Nein</reply>
+            </template>
+        </category>
+<!-- Garderoben -->
+<topic name="Garderoben">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/garderoben.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "100 bis 1000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/garderoben.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/garderoben.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Farbe</pattern>
+    <template>
+        <reply>Anthrazit</reply><reply>Chrom</reply><reply>Edelstahl</reply><reply>Grau</reply><reply>Holz</reply>
+        <reply>Mehrfarbig</reply><reply>Schwarz</reply><reply>Sonstiges</reply><reply>Weiß</reply>
+    </template>
+</category>
+
+<category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Mehrfarbig</pattern>
+    <template><think><set name="color">Mehrfarbig</set><set name="filtercolor">filtercolor=Mehrfarbig</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Chrom</pattern>
+    <template><think><set name="color">Chrom</set><set name="filtercolor">filtercolor=Chrom</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Weiß</pattern>
+    <template><think><set name="color">Weiß</set><set name="filtercolor">filtercolor=Weiß</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Sonstiges</pattern>
+    <template><think><set name="color">Sonstiges</set><set name="filtercolor">filtercolor=Sonstiges</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Edelstahl</pattern>
+    <template><think><set name="color">Edelstahl</set><set name="filtercolor">filtercolor=Edelstahl</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+</topic>
+<!-- Schuhschränke -->
+<topic name="Schuhschränke">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/schuhschraenke.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "100 bis 1000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/schuhschraenke.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/flurmoebel/schuhschraenke.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Farbe</pattern>
+    <template>
+       <reply>Grau</reply><reply>Holz</reply>
+        <reply>Schwarz</reply><reply>Weiß</reply>
+    </template>
+</category>
+<category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Weiß</pattern>
+    <template><think><set name="color">Weiß</set><set name="filtercolor">filtercolor=Weiß</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>  
+
+ <!-- Schreibtische -->
+<topic name="Schreibtische">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtische.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "100 bis 1000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtische.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtische.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Farbe</pattern>
+    <template>
+       <reply>Anthrazit</reply><reply>Grau</reply><reply>Holz</reply>
+        <reply>Schwarz</reply><reply>Weiß</reply>
+    </template>
+</category>
+<category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Weiß</pattern>
+    <template><think><set name="color">Weiß</set><set name="filtercolor">filtercolor=Weiß</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>      
+ <!-- Schreibtischstühle -->
+<topic name="Schreibtischstühle">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischstuehle.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "100 bis 1000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischstuehle.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Farbe</pattern>
+    <template>
+       <reply>Anthrazit</reply><reply>Blau</reply><reply>Grau</reply><reply>Grün</reply><reply>Mehrfarbig</reply>
+        <reply>Orange</reply><reply>>Pink</reply><reply>Rosa</reply><reply>Schwarz</reply>
+    </template>
+</category>
+<category>
+    <pattern>Anthrazit</pattern>
+    <template><think><set name="color">Anthrazit</set><set name="filtercolor">filtercolor=Anthrazit</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>Orange</pattern>
+    <template><think><set name="color">Orange</set><set name="filtercolor">filtercolor=Orange</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Schwarz</pattern>
+    <template><think><set name="color">Schwarz</set><set name="filtercolor">filtercolor=Schwarz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Rosa</pattern>
+    <template><think><set name="color">Rosa</set><set name="filtercolor">filtercolor=Rosa</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Blau</pattern>
+    <template><think><set name="color">Blau</set><set name="filtercolor">filtercolor=Blau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Grün</pattern>
+    <template><think><set name="color">Grün</set><set name="filtercolor">filtercolor=Grün</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Mehrfarbig</pattern>
+    <template><think><set name="color">Mehrfarbig</set><set name="filtercolor">filtercolor=Mehrfarbig</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Pink</pattern>
+    <template><think><set name="color">Pink</set><set name="filtercolor">filtercolor=Pink</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>   
+<!-- Büroregale -->
+<topic name="Büroregale">
+
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/bueroregale.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Farbe</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "100 bis 1000")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="color" value="none"><reply>Farbe</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/bueroregale.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/bueroregale.html?<get name="filtercolor"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Farbe</pattern>
+    <template>
+       <reply>Grau</reply><reply>Holz</reply><reply>Weiß</reply>
+    </template>
+</category><category>
+    <pattern>Grau</pattern>
+    <template><think><set name="color">Grau</set><set name="filtercolor">filtercolor=Grau</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Weiß</pattern>
+    <template><think><set name="color">Weiß</set><set name="filtercolor">filtercolor=Weiß</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category><category>
+    <pattern>Holz</pattern>
+    <template><think><set name="color">Holz</set><set name="filtercolor">filtercolor=Holz</set></think>Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>  
+
+<!-- Schreibtischleuchten -->
+<topic name="Schreibtischleuchten">
+<category>
+    <pattern>Nein</pattern>
+    <template>
+        <link>
+            <text>Hier gehts zu deinen Produkten!</text>
+            <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischleuchten.html</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ja</pattern>
+    <template><reply>Fassung</reply><reply>Preis</reply></template>
+</category>
+<category>
+    <pattern>Preis</pattern>
+    <template>Bitte Betrag eingeben (in diesem Format "10 bis 300")</template>
+</category>
+<category>
+    <pattern>* bis *</pattern>
+    <template><think><set name="price1"><star index="1"></star></set>-<set name="price2"><star index="2"></star></set></think>
+    Okay!
+    <reply>Mehr Filter setzen</reply>
+    <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+<category>
+    <pattern>Mehr Filter setzen</pattern>
+    <template>
+        <condition name="price1" value="1"><reply>Preis</reply></condition>
+        <condition name="fassung2" value="none"><reply>Fassung</reply></condition>
+        <delay>1</delay>
+        <reply>Nein, keine Filter mehr setzen</reply>
+    </template>
+</category>
+
+
+        
+        <category>
+<pattern>Nein, keine Filter mehr setzen</pattern>
+<template><think><set var="matched"><srai>XEQ <get name="price1"/> XS  1  </srai></set></think>
+<condition var="matched">
+<li value="TRUE"><link>
+                    <text>Hier gehts zu deinen Produkten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischleuchten.html?<get name="fassung2"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link></li>
+<li><link>
+                    <text>Hier gehts zu deinen Podukten!</text>
+                    <url>https://www.opti-wohnwelt.de/flur-buero/bueromoebel/schreibtischleuchten.html?<get name="fassung2"/>
+                    <denormalize>and</denormalize>pricerange=<get name="price1"/>-<get name="price2"/></url>
+                </link> </li>
+</condition>
+</template>
+</category>
+    
+<category>
+    <pattern>Fassung</pattern>
+    <template>
+        <reply>E27</reply><reply>E14</reply><reply>G9</reply><reply>LED</reply>
+    </template>
+</category>
+<category>
+    <pattern>E27</pattern>
+    <template><think><set name="fassung1">E27</set><set name="fassung2">socket=E27</set></think>
+    Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>E14</pattern>
+    <template><think><set name="fassung1">E14</set><set name="fassung2">socket=E14</set></think>
+    Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>G9</pattern>
+    <template><think><set name="fassung1">G9</set><set name="fassung2">socket=G9</set></think>
+    Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category>
+<category>
+    <pattern>LED</pattern>
+    <template><think><set name="fassung1">LED</set><set name="fassung2">socket=LED</set></think>
+    Okay, möchten Sie noch andere Filter setzen?
+    <reply>Mehr Filter setzen</reply><reply>Nein, keine Filter mehr setzen</reply></template>
+</category></topic>
+        
+    </topic>
+</aiml>

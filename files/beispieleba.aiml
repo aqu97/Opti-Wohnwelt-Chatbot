@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	
+	
+	<category>
+	    <pattern>Hallo Chatbot</pattern>
+	    <template>Hallo User</template>
+    </category>
+    
+    
+    
+    <category>
+        <pattern>Ich mag *</pattern>
+        <template><star></star>? Ich liebe <star></star></template>
+    </category>
+    
+    
+    
+    
+    
+    
+    
+    <category>
+         <pattern>Ich heiße *</pattern>
+         <template>Hey <set name="username"><star></star></set>
+         , ich hoffe es geht dir gut. Wie kann ich dir helfen?</template>
+    </category>
+ 
+    <category>
+        <pattern>Wie heiße ich</pattern>
+        <template>Du bist <get name="username"></get>, oder?</template>
+    </category>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <category>
+    	<pattern>warum magst du tee</pattern>
+    	<template>Unsere Öffnungszeiten sind von 9:00 Uhr bis 18:00 Uhr</template>
+    </category>
+    
+    <category>
+    	<pattern>weshalb gibt es Tee</pattern>
+    	<template><srai>warum magst du tee</srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>^ Teekanne #</pattern>
+        <template><srai>warum magst du tee</srai></template>
+    </category>
+    
+    
+    
+    
+    <category>
+        <pattern>Ich will etwas über * erfahren</pattern>
+        <template><think><set name="topic"><star></star></set></think>Sehr gerne, stell mir deine Frage.</template>
+    </category>
+    
+    
+    <topic name="Sofas">
+        <category>
+            <pattern>Welches Möbelstück können Sie mir empfehlen</pattern>
+            <template>Schauen Sie sich doch einmal dieses Produkt an.
+            <link>
+                <text>Zum Sofa</text>
+                <url>https://www.opti-wohnwelt.de/wohnlandschaft-stanley-job-0009100231.html</url>
+            </link>
+            </template>
+            
+        
+        </category>
+     </topic>
+    
+    <topic name="Betten">
+        <category>
+            <pattern>Welches Möbelstück können Sie mir empfehlen</pattern>
+            <template>Schauen Sie sich doch einmal dieses Produkt an.
+                <link>
+                <text>Zum Bett</text>
+                <url>https://www.opti-wohnwelt.de/via-kollektion-plus-polsterbett-pollux-0004070040.html</url>
+            </link>
+            </template>
+        </category>
+     </topic>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</aiml>

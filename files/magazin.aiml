@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern># Magazin ^</pattern>
+	    <template>
+	        <carousel>
+	            <card>
+                    <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/1121/polsterbett-glinda-hauptbild.jpg</image>
+                    <title>Gemütliches Schlafzimmer</title>
+                    <subtitle>für die kalte Jahreszeit</subtitle>
+                    <button>
+                        <text>Zum Beitrag</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin/schlafzimmer-kalte-jahreszeit.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button>
+                    <button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+	            <card>
+                    <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/1021/Garnitur_emily_hauptbild.jpg</image>
+                    <title>Wohntrends für den Herbst </title>
+                    <subtitle>Gemütlichkeit im kalten Herbst</subtitle>
+                    <button>
+                        <text>Zum Beitrag</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin/wohntrends-herbst-2021.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button><button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/1021/kleine_kuechen_titelbild.jpg</image>
+                    <title>Kleine Küche, große Wirkung</title>
+                    <subtitle>Stilvoll Kochen auf engem Raum</subtitle>
+                    <button>
+                        <text>Zum Beitrag</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin/kleine-kueche-grosse-wirkung.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button><button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+	            <card>
+                    <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/0921/sideboard_namur_vorschau.jpg</image>
+                    <title>Rustikal und Industrial</title>
+                    <subtitle>Esszimmer im Industrial-Style</subtitle>
+                    <button>
+                        <text>Zum Beitrag</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin/esszimmer-rustikal-industrial.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button><button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+	            <card>
+	                <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/0921/schaukelstuhl-vorschau.jpg</image>
+	                <title>Schaukelstühle  </title>
+	                <subtitle>Klassiker im neuen Design</subtitle>
+	                <button>
+	                    <text>Zum Beitrag</text>
+	                    <url>https://www.opti-wohnwelt.de/wohnmagazin/schaukelstuehle.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button><button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://www.opti-wohnwelt.de/pub/media/magazin/2021/0921/herbstfarben-vorschau.jpg</image>
+                    <title>Trendfarben</title>
+                    <subtitle>Herbst 2021</subtitle>
+                    <button>
+                        <text>Zum Beitrag</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin/trendfarben-herbst.html</url>
+                    </button>
+                    <button>
+                        <text>Zu allen Magazinbeiträgen</text>
+                        <url>https://www.opti-wohnwelt.de/wohnmagazin.html</url>
+                    </button><button>
+                        <text>Zurück</text>
+                        <postback>Hallo</postback>
+                    </button>
+                </card>
+                
+                
+                
+            </carousel>
+        </template>
+    </category>
+    <category>
+        <pattern># Magazinbeiträge ^</pattern>
+        <template><srai>Magazin</srai></template>
+    </category>
+    
+    
+    
+  
+    
+    
+</aiml>
